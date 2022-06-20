@@ -98,65 +98,6 @@ my_list
 
 **Explanation:** `The parent class which is inherited is passed as an argument to the child class. Therefore, here the first option is the right answer.`
 
-#### Q11. What is the correct way to write a doctest?
-
-- [ ] A
-
-```python
-def sum(a, b):
-    """
-    sum(4, 3)
-    7
-
-    sum(-4, 5)
-    1
-    """
-    return a + b
-```
-
-- [x] B
-
-```python
-def sum(a, b):
-    """
-    >>> sum(4, 3)
-    7
-
-    >>> sum(-4, 5)
-    1
-    """
-    return a + b
-```
-
-- [ ] C
-
-```python
-def sum(a, b):
-    """
-    # >>> sum(4, 3)
-    # 7
-
-    # >>> sum(-4, 5)
-    # 1
-    """
-    return a + b
-```
-
-- [ ] D
-
-```python
-def sum(a, b):
-    ###
-    >>> sum(4, 3)
-    7
-
-    >>> sum(-4, 5)
-    1
-    ###
-    return a + b
-```
-
-**Explanation** - use `'''` to start the doc and add output of the cell after `>>>`
 
 #### Q12. What built-in Python data type is commonly used to represent a stack?
 
@@ -178,33 +119,7 @@ return list(enumerate(college_years, 2019))
 - [ ] `[('Freshman', 'Sophomore', 'Junior', 'Senior'), (2019, 2020, 2021, 2022)]`
 - [x] `[(2019, 'Freshman'), (2020, 'Sophomore'), (2021, 'Junior'), (2022, 'Senior')]`
 
-#### Q14. What is the purpose of the "self" keyword when defining or calling instance methods?
 
-- [ ] `self` means that no other arguments are required to be passed into the method.
-- [ ] There is no real purpose for the `self` method; it's just historic computer science jargon that Python keeps to stay consistent with other programming languages.
-- [x] `self` refers to the instance whose method was called.
-- [ ] `self` refers to the class that was inherited from to create the object using `self`.
-
-**Simple example**
-
-```python
-class my_secrets:
-    def __init__(self, password):
-        self.password = password
-        pass
-instance = my_secrets('1234')
-instance.password
->>>'1234'
-```
-
-#### Q15. Which of these is NOT a characteristic of namedtuples?
-
-- [ ] You can assign a name to each of the `namedtuple` members and refer to them that way, similarly to how you would access keys in `dictionary`.
-- [ ] Each member of a namedtuple object can be indexed to directly, just like in a regular `tuple`.
-- [ ] `namedtuples` are just as memory efficient as regular `tuples`.
-- [x] No import is needed to use `namedtuples` because they are available in the standard library.
-
-**We need to import it using**:`from collections import namedtuple`
 
 #### Q16. What is an instance method?
 
@@ -220,12 +135,6 @@ instance.password
 - [ ] It keeps data and the methods that can manipulate that data in one place.
 - [x] It only allows the data to be changed by methods.
 
-#### Q18. What is the purpose of an if/else statement?
-
-- [ ] It tells the computer which chunk of code to run if the instructions you coded are incorrect.
-- [ ] It runs one chunk of code if all the imports were successful, and another chunk of code if the imports were not successful.
-- [x] It executes one chunk of code if a condition is true, but a different chunk of code if the condition is false.
-- [ ] It tells the computer which chunk of code to run if the is enough memory to handle it, and which chunk of code to run if there is not enough memory to handle it.
 
 #### Q19. What built-in Python data type is best suited for implementing a queue?
 
@@ -293,12 +202,6 @@ area
 - [x] when it has assessed each item in the iterable it is working on or a break keyword is encountered
 - [ ] when the runtime for the loop exceeds O(n^2)
 
-#### Q27. Assuming the node is in a singly linked list, what is the runtime complexity of searching for a specific node within a singly linked list?
-
-- [x] The runtime is O(n) because in the worst case, the node you are searching for is the last node, and every node in the linked list must be visited.
-- [ ] The runtime is O(nk), with n representing the number of nodes and k representing the amount of time it takes to access each node in memory.
-- [ ] The runtime cannot be determined unless you know how many nodes are in the singly linked list.
-- [ ] The runtime is O(1) because you can index directly to a node in a singly linked list.
 
 #### Q28. Given the following three list, how would you create a new list that matches the desired output printed below?
 
@@ -498,148 +401,6 @@ b 1 2 3
 c 1 2 3
 ```
 
-#### Q36. Pick correct representation of doctest for function in Python.
-
-- [ ] <br>
-
-```python
-def sum(a, b):
-    # a = 1
-    # b = 2
-    # sum(a, b) = 3
-
-    return a + b
-```
-
-- [ ] <br>
-
-```python
-def sum(a, b):
-    """
-    a = 1
-    b = 2
-    sum(a, b) = 3
-    """
-
-    return a + b
-```
-
-- [x] <br>
-
-```python
-def sum(a, b):
-    """
-    >>> a = 1
-    >>> b = 2
-    >>> sum(a, b)
-    3
-    """
-
-    return a + b
-```
-
-- [ ] <br>
-
-```python
-def sum(a, b):
-    '''
-    a = 1
-    b = 2
-    sum(a, b) = 3
-    '''
-    return a + b
-```
-
-**Explanation:** Use `"""` to start and end the docstring and use `>>>` to represent the output. If you write this correctly you can also run the doctest using build-in doctest module
-
-#### Q37. Suppose a Game class inherits from two parent classes: BoardGame and LogicGame. Which statement is true about the methods of an object instantiated from the Game class?
-
-- [ ] When instantiating an object, the object doesn't inherit any of the parent class's methods.
-- [ ] When instantiating an object, the object will inherit the methods of whichever parent class has more methods.
-- [ ] When instantiating an object, the programmer must specify which parent class to inherit methods from.
-- [x] An instance of the Game class will inherit whatever methods the BoardGame and LogicGame classes have.
-
-#### Q38. What does calling namedtuple on a collection type return?
-
-- [ ] a generic object class with iterable parameter fields
-- [ ] a generic object class with non-iterable named fields
-- [ ] a tuple subclass with non-iterable parameter fields
-- [x] a tuple subclass with iterable named fields
-
-**Example**
-
-```python
-import math
-radius = [1,2,3]
-area = list(map(lambda x: round(math.pi*(x**2), 2), radius))
-area
->>> [3.14, 12.57, 28.27]
-```
-
-#### Q39. What symbol(s) do you use to assess equality between two elements?
-
-- [ ] `&&`
-- [ ] `=`
-- [x] `==`
-- [ ] `||`
-
-#### Q40. Review the code below. What is the correct syntax for changing the price to 1.5?
-
-```python
-fruit_info = {
-  'fruit': 'apple',
-  'count': 2,
-  'price': 3.5
-}
-```
-
-- [x] `fruit_info ['price'] = 1.5`
-- [ ] `my_list [3.5] = 1.5`
-- [ ] `1.5 = fruit_info ['price]`
-- [ ] `my_list['price'] == 1.5`
-
-#### Q41. What value would be returned by this check for equality?
-
-`5 != 6`
-
-- [ ] `yes`
-- [ ] `False`
-- [x] `True`
-- [ ] `None`
-
-**Explanation** - `!=` is equivalent to **not equal to** in python
-
-#### Q42. What does a class's `__init__()` method do?
-
-- [ ] It makes classes aware of each other if more than one class is defined in a single code file.
-- [ ] It is included to preserve backwards compatibility from Python 3 to Python 2, but no longer needs to be used in Python 3.
-- [x] It is a method that acts as a constructor and is called automatically whenever a new object is created from a class. It sets the initial state of a new object.
-- [ ] It initializes any imports you may have included at the top of your file.
-
-**Example:**
-
-```python
-class test:
-    def __init__(self):
-        print('I came here without your permission lol')
-        pass
-t1 = test()
->>> 'I came here without your permission lol'
-```
-
-#### Q43. What is meant by the phrase "space complexity"?
-
-- [ ] `How many microprocessors it would take to run your code in less than one second`
-- [ ] `How many lines of code are in your code file`
-- [x] `The amount of space taken up in memory as a function of the input size`
-- [ ] `How many copies of the code file could fit in 1 GB of memory`
-
-#### Q44. What is the correct syntax for creating a variable that is bound to a dictionary?
-
-- [x] `fruit_info = {'fruit': 'apple', 'count': 2, 'price': 3.5}`
-- [ ] `fruit_info =('fruit': 'apple', 'count': 2,'price': 3.5 ).dict()`
-- [ ] `fruit_info = ['fruit': 'apple', 'count': 2,'price': 3.5 ].dict()`
-- [ ] `fruit_info = to_dict('fruit': 'apple', 'count': 2, 'price': 3.5)`
 
 #### Q45. What is the proper way to write a list comprehension that represents all the keys in this dictionary?
 
@@ -649,15 +410,6 @@ t1 = test()
 - [ ] `fruit_names = for x in fruits.keys() *`
 - [x] `fruit_names = [x for x in fruits.keys()]`
 - [ ] `fruit_names = x for x in fruits.keys()`
-
-#### Q46. What is the purpose of the `self` keyword when defining or calling methods on an instance of an object?
-
-- [ ] `self` refers to the class that was inherited from to create the object using `self`.
-- [ ] There is no real purpose for the `self` method. It's just legacy computer science jargon that Python keeps to stay consistent with other programming languages.
-- [ ] `self` means that no other arguments are required to be passed into the method.
-- [x] `self` refers to the instance whose method was called.
-
-**Explanation:** - Try running the example of the Q42 without passing `self` argument inside the `__init__`, you'll understand the reason. You'll get the error like this `__init__() takes 0 positional arguments but 1 was given`, this means that something is going inside even if haven't specified, which is instance itself.
 
 #### Q47. What statement about the class methods is true?
 
